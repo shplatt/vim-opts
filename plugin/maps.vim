@@ -90,3 +90,55 @@ nnoremap <silent><expr> <F2> ':set wrap! go'.'-+'[&wrap]."=b\r"
 
 " Toggle highlighting for word under cursor
 nnoremap <F10>    :set invhls<CR>:exec "let @/='\\<".expand("<cword>")."\\>'"<CR>/<BS>
+
+
+" Control-Shift-PageUp drags the active tab page to the left (wraps around)
+imap <C-S-PageUp> :call DragTagLeft()<CR>
+nmap <C-S-PageUp> :call DragTagLeft()<CR>
+imap <A-Left> :call DragTagLeft()<CR>
+nmap <A-Left> :call DragTagLeft()<CR>
+function! DragTagLeft()
+   let n = tabpagenr()
+   execute 'tabmove' (n == 1 ? "" : n - 2)
+   " Use this line to allow tabs to wrap around
+   "execute 'tabmove' (n == 1 ? "" : n - 2)
+   " Use this line to not allow tabs to wrap around
+   execute 'tabmove' (n == 1 ? 0 : n - 2)
+   " force a redraw of the tab line
+   let &showtabline = &showtabline
+endfunction
+
+" Control-Shift-PageDown drags the active tab page to the right (wraps around)
+imap <C-S-PageDown> :call DragTagRight()<CR>
+nmap <C-S-PageDown> :call DragTagRight()<CR>
+imap <A-Right> :call DragTagRight()<CR>
+nmap <A-Right> :call DragTagRight()<CR>
+function! DragTagRight()
+   let n = tabpagenr()
+   "execute 'tabmove' (n == tabpagenr('$') ? 0 : n)
+   execute 'tabmove' (n == tabpagenr('$') ? "" : n)
+   " force a redraw of the tab line
+   let &showtabline = &showtabline
+endfunction
+
+" Control-Shift-Home puts the active tab page the furthest left
+imap <C-S-Home> :call TabFarLeft()<CR>
+nmap <C-S-Home> :call TabFarLeft()<CR>
+imap <A-Home> :call TabFarLeft()<CR>
+nmap <A-Home> :call TabFarLeft()<CR>
+function! TabFarLeft()
+   execute 'tabmove' 0
+   " force a redraw of the tab line
+   let &showtabline = &showtabline
+endfunction
+
+" Control-Shift-End puts the active tab page the furthest right
+imap <C-S-End> :call TabFarRight()<CR>
+nmap <C-S-End> :call TabFarRight()<CR>
+imap <A-End> :call TabFarRight()<CR>
+nmap <A-End> :call TabFarRight()<CR>
+function! TabFarRight()
+   execute 'tabmove' ""
+   " force a redraw of the tab line
+   let &showtabline = &showtabline
+endfunction
