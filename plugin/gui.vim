@@ -42,5 +42,6 @@ if has("gui_running")
    hi StatusLine cterm=reverse ctermfg=white ctermbg=blue guifg=White guibg=darkblue
    hi Folded guibg=black guifg=red
    hi LineNr guifg=#555555 guibg=#222222
+   hi CursorLineNr guifg=#555555 guibg=#222222
 
 endif
