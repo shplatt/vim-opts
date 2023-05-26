@@ -27,4 +27,9 @@ if has("autocmd")
      autocmd BufWinEnter * silent! loadview
    augroup END
 
+   " Added 2021-3-1
+   " Don't want to open a file with last cursor position
+   " This started after migrating to CentOS 7
+   au! redhat BufReadPost
+
 endif
