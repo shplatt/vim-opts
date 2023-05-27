@@ -1,3 +1,5 @@
+" My autocommands - make changes on https://github.com/shplatt/vim-opts
+
 if has("autocmd")
    autocmd BufRead *.txt  set tw=95
    autocmd BufRead *.doc  set tw=95
