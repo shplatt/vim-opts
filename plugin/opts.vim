@@ -1,4 +1,5 @@
-" My VIM options
+" My VIM options - make changes on https://github.com/shplatt/vim-opts
+
 set   nocompatible           " Start with Vim defaults - must be first
 set   autoindent             " always set autoindenting on
 set nobackup                 " Don't create a backup file
