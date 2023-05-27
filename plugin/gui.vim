@@ -1,3 +1,5 @@
+" My GUI settings - make changes on https://github.com/shplatt/vim-opts
+
 if has("gui_running")
    set columns=105            " 
    set lines=75               "
