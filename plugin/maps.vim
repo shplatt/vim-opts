@@ -1,3 +1,5 @@
+" My key maps - make changes on https://github.com/shplatt/vim-opts
+
 " j and k should behave the same regardless of long line wrapping
 nmap j            gj
 nmap k            gk
