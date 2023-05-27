@@ -27,7 +27,7 @@ set   updatetime=2000        " Update swapfile after this many miliseconds have 
 set   vb t_vb=               " No bells... not even visually
 set   viminfo='100,\"50      " read/write a .viminfo file, store no more than 50 lines of regs
 set   wildmenu               " Show completion menu
-set   wildmode=full          " Cmd-line completion completes first full match; displays wildmenu
+set   wildmode=list:longest  " Cmd-line completion completes the longest string; displays wildmenu
 set   wrapmargin=2           " Start wrapping 2 chars from right of window
 set nowritebackup            " Don't create a backup file
 
