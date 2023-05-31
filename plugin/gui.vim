@@ -7,7 +7,11 @@ if has("gui_running")
    set guitablabel=%t%m
    set number
    set relativenumber
+   set tabpagemax=15
    
+   " This gets hammered between .vimrc and .gvimrc processing, so set after all init done
+   au GUIEnter * set t_vb=
+
    " Non-Nerd-Fonts
    "----------------
    set guifont=Fixed\ 8
