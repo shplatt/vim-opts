@@ -54,7 +54,7 @@ nmap ,vv          :set ve=<CR>
 nmap ,w           <C-W>p
 
 " Start NERDTree
-nmap ;n           :NERDTree
+nmap ;n           :NERDTree<CR>
 
 " Don't want errors for these:
 nmap :Q           :q
