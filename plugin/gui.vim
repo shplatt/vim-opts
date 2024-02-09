@@ -44,7 +44,7 @@ if has("gui_running")
    hi Special guifg=Orange
    hi Comment guifg=#80a0dd
    hi Search term=reverse ctermfg=0 ctermbg=14
-   hi MatchParen ctermbg=black ctermfg=white
+   hi MatchParen term=reverse ctermbg=3 gui=bold guifg=white guibg=black
    hi StatusLine cterm=reverse ctermfg=white ctermbg=blue guifg=White guibg=darkblue
    hi Folded guibg=black guifg=red
    hi LineNr guifg=#555555 guibg=#222222
