@@ -37,7 +37,8 @@ if has("gui_running")
    map <C-S-Right> :set columns+=10<CR>
    map <C-S-Left>  :set columns-=10<CR>
    " Open new tab and move to far right
-   map <C-S-T>     :tabe<CR>:call TabFarRight()<CR>
+   " This turns into <C-T>, which steals the :pop shortcut when traversion help tags
+   "map <C-S-T>     :tabe<CR>:call TabFarRight()<CR>
 
    colorscheme murphy
    syntax on
