@@ -40,3 +40,14 @@ set   formatoptions=tcq2r    " t   Auto-wrap text
 set statusline=%<%f\ %y\ \(%n\)%a%h%m%r%=0x%B\ \ \ L:%l/%L\ C:%c%V\ \ \ %P
 set comments=s1:/*,mb:*,ex:*/,://,b:#,b:##,b:###,:%,:XCOMM,n:>,fb:-,b:@
 
+" Project paths
+set path  =,,                    " Current directory
+set path +=.                     " Directory of current file
+set path +=./..                  " Directory above current file
+set path +=./../..               " Two directories above current file
+set path +=./*                   " All subdirectories in directory of current file
+set path +=$WS_TOP/*/ip/rtl      " rtl dir in current workspace
+set path +=$WS_TOP/*/ip/rtl/*    " rtl subdirs in current workspace
+set path +=$WS_TOP/tsbs/*/rtl    " All TSB rtl dirs in current workspace
+set path +=$WS_TOP/tsbs/*/rtl/*  " All TSB rtl subdirs in current workspace
+
