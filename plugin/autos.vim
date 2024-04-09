@@ -7,11 +7,6 @@ if has("autocmd")
    autocmd BufRead *.v[h] set filetype=verilog
    autocmd BufRead *.[fF] set syntax=c
    autocmd BufRead Makefile set ts=8 noexpandtab wm=0
-   autocmd BufEnter *.sv,*.svh,*.svi set formatoptions-=t
-   autocmd BufEnter *.sv,*.svh,*.svi set tw=95
-   autocmd BufEnter *.sv,*.svh,*.svi set commentstring=//\ %s   " used by vim-commentary
-   autocmd BufEnter *.sv,*.svh,*.svi set indentexpr=            " SV indentation bugs me, so turning off
-   autocmd BufNewFile,BufEnter *.v,*.vh,*.sv,*.svh se comments+=n://
    autocmd BufNewFile,BufEnter *.txt set wm=8
    autocmd BufNewFile,BufEnter *.txt se fo=crq2
    autocmd BufNewFile,BufEnter *.txt se comments+=n://
@@ -21,6 +16,12 @@ if has("autocmd")
    autocmd BufNewFile,BufEnter *.h se fo=crq2
    autocmd BufNewFile,BufEnter leclint.rpt set syntax=off
 
+   autocmd BufEnter *.sv,*.svh,*.svi set formatoptions-=t
+   autocmd BufEnter *.sv,*.svh,*.svi set tw=95
+   autocmd BufEnter *.sv,*.svh,*.svi set commentstring=//\ %s   " used by vim-commentary
+   autocmd BufEnter *.sv,*.svh,*.svi set indentexpr=            " SV indentation bugs me, so turning off
+   autocmd BufEnter *.sv,*.svh,*.svi set comments+=n://
+   autocmd BufEnter *.sv,*.svh,*.svi set includeexpr=substitute(v:fname,'$','.sv','')
    autocmd BufEnter *.sv,*.svh,*.svi
                      \ let b:match_words = '\<if\>:\<else\>'
                         \ . ',\<begin\>:\<end\>'
