@@ -18,8 +18,8 @@ if has("autocmd")
 
    autocmd BufEnter *.sv,*.svh,*.svi set formatoptions-=t
    autocmd BufEnter *.sv,*.svh,*.svi set tw=95
-   autocmd BufEnter *.sv,*.svh,*.svi set commentstring=//\ %s   " used by vim-commentary
-   autocmd BufEnter *.sv,*.svh,*.svi set indentexpr=            " SV indentation bugs me, so turning off
+   autocmd BufEnter *.sv,*.svh,*.svi set commentstring=//\ %s " used by vim-commentary
+   autocmd BufEnter *.sv,*.svh,*.svi set indentexpr=          " SV indentation bugs me, turning off
    autocmd BufEnter *.sv,*.svh,*.svi set comments+=n://
    autocmd BufEnter *.sv,*.svh,*.svi set includeexpr=substitute(v:fname,'$','.sv','')
    autocmd BufEnter *.sv,*.svh,*.svi
