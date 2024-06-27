@@ -40,6 +40,7 @@ set   formatoptions=tcq2r    " t   Auto-wrap text
 set statusline=%<%f\ %y\ \(%n\)%a%h%m%r%=0x%B\ \ \ L:%l/%L\ C:%c%V\ \ \ %P
 set comments=s1:/*,mb:*,ex:*/,://,b:#,b:##,b:###,:%,:XCOMM,n:>,fb:-,b:@
 
+"
 " Project paths
 set path  =,,                    " Current directory
 set path +=.                     " Directory of current file
@@ -51,3 +52,38 @@ set path +=$WS_TOP/*/ip/rtl/*    " rtl subdirs in current workspace
 set path +=$WS_TOP/tsbs/*/rtl    " All TSB rtl dirs in current workspace
 set path +=$WS_TOP/tsbs/*/rtl/*  " All TSB rtl subdirs in current workspace
 
+
+" Abbreviations
+ia teh the
+ia aff always_ff @ (posedge clk or negedge rstb)   if (!rstb)   beginend<BS><BS><BS>else   beginend<esc>
+ia fsm always_comb   beginstate_d = state;case (state)   IDLE   : begin         end<BS><BS><BS><BS><BS><BS><BS><BS><BS>default: state_d = IDLE;<BS><BS><BS>endcaseend<ESC>
+ia fi+ for (int i=0; i<NUM; i++)<ESC>
+ia fi- for (int i=NUM-1; i>=0; i--)<ESC>
+ia fj+ for (int j=0; j<NUM; j++)<ESC>
+ia fj- for (int j=NUM-1; j>=0; j--)<ESC>
+
+ia svm <esc>:set paste!<cr>i
+   \module %<bs><bs><bs>#()();
+   \//---------------------------------------------------------------------------------------------
+   \//  Variables
+   \//---------------------------------------------------------------------------------------------
+   \//---------------------------------------------------------------------------------------------
+   \//  Flops
+   \//---------------------------------------------------------------------------------------------
+   \always_ff @ (posedge clk or negedge rstb)
+   \   if (!rstb)
+   \      begin
+   \      end
+   \   else
+   \      begin
+   \      end
+   \
+   \endmodule<esc>:set paste!<cr><c-l>
+
+
+" Plugin: Ctrl-P
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_root_markers = ['.HWCM', '.WS_CD_STOP']
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPBuffer'
+let g:ctrlp_switch_buffer = 'Et'
