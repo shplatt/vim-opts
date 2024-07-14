@@ -42,16 +42,17 @@ set comments=s1:/*,mb:*,ex:*/,://,b:#,b:##,b:###,:%,:XCOMM,n:>,fb:-,b:@
 
 "
 " Project paths
-set path  =,,                    " Current directory
-set path +=.                     " Directory of current file
-set path +=./..                  " Directory above current file
-set path +=./../..               " Two directories above current file
-set path +=./*                   " All subdirectories in directory of current file
-set path +=$WS_TOP/*/ip/rtl      " rtl dir in current workspace
-set path +=$WS_TOP/*/ip/rtl/*    " rtl subdirs in current workspace
-set path +=$WS_TOP/tsbs/*/rtl    " All TSB rtl dirs in current workspace
-set path +=$WS_TOP/tsbs/*/rtl/*  " All TSB rtl subdirs in current workspace
-
+set path  =,,                     " Current directory
+set path +=.                      " Directory of current file
+set path +=./..                   " Directory above current file
+set path +=./../..                " Two directories above current file
+set path +=./*                    " All subdirectories in directory of current file
+set path +=$WS_TOP/*/ip/rtl       " rtl dir in current workspace
+set path +=$WS_TOP/*/ip/rtl/*     " rtl subdirs in current workspace
+set path +=$WS_TOP/tsbs/*/rtl     " All TSB rtl dirs in current workspace
+set path +=$WS_TOP/tsbs/*/rtl/*   " All TSB rtl subdirs in current workspace
+set path +=$WS_TOP/cadips/*/rtl   " All cadip rtl dirs in current workspace
+set path +=$WS_TOP/cadips/*/rtl/* " All cadip rtl subdirs in current workspace
 
 " Abbreviations
 ia teh the
